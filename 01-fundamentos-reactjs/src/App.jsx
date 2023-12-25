@@ -3,14 +3,16 @@ import { Post } from "./Post";
 function App() {
   return (
     <div>
-      <Post></Post>
-      <Post></Post>
-      <Post></Post>
-      <Post></Post>
-      <Post></Post>
+      <Post 
+      author="Lucas"
+      content="Post"
+      />
+        <Post 
+      author="Teste"
+      content="Post"
+      />
     </div>
-  )
+  );
 }
 
 export default App;
- 
