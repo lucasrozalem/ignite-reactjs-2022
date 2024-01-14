@@ -36,8 +36,8 @@ export function Post({ author, content, publishedAt }) {
     setNewCommentText(event.target.value);
   }
 
-  function deleteComment(comment) {
-    setComments(comments.filter((comment) => comment !== content));
+  function deleteComment(commentToDelete) {
+    setComments(comments.filter((comment) => comment !== commentToDelete));
   }
 
   return (
@@ -74,7 +74,7 @@ export function Post({ author, content, publishedAt }) {
       </div>
 
       <form onSubmit={handleCreateNewComment} className={styles.commentForm}>
-        <strong> Deixei seu feedback</strong>
+        <strong> Deixe seu feedback</strong>
         <textarea
           placeholder="Deixe um comentário"
           name="comment"
@@ -91,7 +91,7 @@ export function Post({ author, content, publishedAt }) {
             <Comment
               key={comment}
               content={comment}
-              deleteComment={deleteComment}
+              onDeleteComment={deleteComment}
             />
           );
         })}
